@@ -174,9 +174,9 @@ p {
 
 .beliefs-block li {
   display: grid;
-  grid-template-columns: 0.72em 1fr;
-  gap: 0.28em;
-  align-items: baseline;
+  grid-template-columns: auto 1fr;
+  gap: 0.34em;
+  align-items: start;
   color: #050505;
   font-size: 1.12rem;
   line-height: 1.36;
@@ -185,12 +185,11 @@ p {
 .beliefs-block li::before {
   content: "*";
   display: block;
-  width: 0.72em;
   color: #050505;
   font-weight: 400;
   line-height: 1;
   text-align: center;
-  transform: translateY(0.09em);
+  margin-top: 0.24em;
 }
 
 @media (max-height: 690px) {
