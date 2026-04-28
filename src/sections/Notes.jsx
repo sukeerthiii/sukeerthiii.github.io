@@ -66,8 +66,8 @@ function NoteSeparator() {
 
 export default function Notes() {
   return (
-    <section id="notes" className="notes-section">
-      <h2 className="section-heading">Notes</h2>
+    <section id="notebook" className="notes-section">
+      <h2 className="section-heading">My Notebook</h2>
       <div className="notes-list">
         {notes.map((note, index) => (
           <article className="note-post" id={`note-${note.id}`} key={note.id}>

@@ -37,7 +37,7 @@ const NAV = [
   { href: '#',          label: 'Home' },
   { href: '#about',     label: 'About' },
   { href: '#now',       label: 'Now' },
-  { href: '#notes',     label: 'Notes' },
+  { href: '#notebook',  label: 'My Notebook' },
 ]
 
 export default function Sidebar() {
