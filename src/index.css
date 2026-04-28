@@ -8,6 +8,9 @@
   --link:  #111111;
   --hl:    #fff59d;
   --font-serif: "IM Fell English", Georgia, "Times New Roman", serif;
+  --font-cormorant: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-baskerville: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --font-newsreader: "Newsreader", Georgia, "Times New Roman", serif;
   --font-sans: Arial, Helvetica, system-ui, sans-serif;
   --serif-font-size: clamp(17px, 1.48vw, 23px);
   --sans-font-size: clamp(16px, 1.4vw, 22px);
@@ -100,6 +103,66 @@ section { scroll-margin-top: 24px; }
   text-decoration: underline;
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
+}
+
+.font-options-section {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.font-options-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.font-option {
+  border: 1px solid var(--line);
+  padding: 18px 18px 16px;
+  background: #ffffff;
+  color: #050505;
+}
+
+.font-option h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.font-option p {
+  margin: 0;
+}
+
+.font-option-note {
+  margin-top: 14px !important;
+  border-top: 1px solid #111111;
+  padding-top: 8px;
+  color: #333333;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.font-sample-fell {
+  font-family: var(--font-serif);
+}
+
+.font-sample-cormorant {
+  font-family: var(--font-cormorant);
+  font-size: 1.18rem;
+  line-height: 1.43;
+}
+
+.font-sample-baskerville {
+  font-family: var(--font-baskerville);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.font-sample-newsreader {
+  font-family: var(--font-newsreader);
+  font-size: 1.05rem;
+  line-height: 1.55;
 }
 
 .notes-section {
@@ -333,6 +396,10 @@ section { scroll-margin-top: 24px; }
   }
 
   .note-subimages {
+    grid-template-columns: 1fr;
+  }
+
+  .font-options-list {
     grid-template-columns: 1fr;
   }
 

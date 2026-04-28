@@ -35,9 +35,10 @@ function useFontMode() {
 
 const NAV = [
   { href: '#',          label: 'Home' },
+  { href: '#fonts',     label: 'Fonts' },
   { href: '#about',     label: 'About' },
   { href: '#now',       label: 'Now' },
-  { href: '#notebook',  label: 'My Notebook' },
+  { href: '#notes',     label: 'Notes' },
 ]
 
 export default function Sidebar() {
