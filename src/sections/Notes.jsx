@@ -57,10 +57,28 @@ function NoteImage({ src, title }) {
 function NoteSeparator() {
   return (
     <div className="note-separator" aria-hidden="true">
-      <span>*</span>
-      <span>*</span>
-      <span>*</span>
+      <span className="note-separator-line" />
+      <CrayonFlower tilt="-8" />
+      <CrayonFlower tilt="5" />
+      <CrayonFlower tilt="-3" />
+      <span className="note-separator-line" />
     </div>
+  )
+}
+
+function CrayonFlower({ tilt }) {
+  return (
+    <svg className="crayon-flower" viewBox="0 0 24 24" style={{ transform: `rotate(${tilt}deg)` }}>
+      <path d="M12 10.8c-1.8-2.5-1.4-5.4.2-5.4 1.4 0 1.8 2.8-.2 5.4Z" />
+      <path d="M12.6 11.2c2.3-2.1 5.2-2.1 5.1-.4-.1 1.4-2.9 1.8-5.1.4Z" />
+      <path d="M11.8 12.1c1.9 2.5 1.1 5.2-.5 5-1.4-.2-1.6-2.9.5-5Z" />
+      <path d="M11.2 11.2c-2.4 1.9-5.1 1.5-4.9-.1.1-1.4 2.8-1.8 4.9.1Z" />
+      <path d="M12 11.5c-1.1-1.8-.3-3.6 1.1-3 1.3.6.7 2.2-1.1 3Z" className="crayon-flower-ghost" />
+      <circle cx="12" cy="11.4" r="1.4" />
+      <path d="M12 13.3c.5 2.2.2 4.4-1.1 6.3" />
+      <path d="M11.1 17.2c-1.6-.4-2.7-1.1-3.3-2.2" />
+      <path d="M11.7 16.2c1.8-.1 3.1-.8 3.9-2" />
+    </svg>
   )
 }
 
@@ -68,6 +86,11 @@ export default function Notes() {
   return (
     <section id="notes" className="notes-section">
       <h2 className="section-heading">Notes</h2>
+      {notes.length === 0 && (
+        <div className="note-separator-preview">
+          <NoteSeparator />
+        </div>
+      )}
       <div className="notes-list">
         {notes.map((note, index) => (
           <article className="note-post" id={`note-${note.id}`} key={note.id}>

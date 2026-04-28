@@ -125,13 +125,13 @@ function PeakFloat({ tip }) {
           bottom: fill ? -ARROW : -ARROW - 1,
           borderLeft: `${ARROW}px solid transparent`,
           borderRight: `${ARROW}px solid transparent`,
-          borderTop: `${ARROW}px solid ${fill ? '#ffffcc' : '#111'}`,
+          borderTop: `${ARROW}px solid ${fill ? '#fff' : '#111'}`,
         }
       : {
           top: fill ? -ARROW : -ARROW - 1,
           borderLeft: `${ARROW}px solid transparent`,
           borderRight: `${ARROW}px solid transparent`,
-          borderBottom: `${ARROW}px solid ${fill ? '#ffffcc' : '#111'}`,
+          borderBottom: `${ARROW}px solid ${fill ? '#fff' : '#111'}`,
         }),
   })
 
@@ -144,7 +144,7 @@ function PeakFloat({ tip }) {
         top: pos.top,
         width: iframe ? `${IFRAME_W}px` : img ? '260px' : 'max-content',
         maxWidth: 'min(520px, calc(100vw - 16px))',
-        background: '#ffffcc',
+        background: '#fff',
         border: '1px solid #111',
         boxShadow: '4px 4px 0 #111',
         fontFamily: 'var(--site-font)',
