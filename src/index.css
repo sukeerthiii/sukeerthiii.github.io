@@ -99,6 +99,39 @@ a { color: var(--link); text-underline-offset: 0.15em; }
 
 section { scroll-margin-top: 24px; }
 
+.intro-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.44em;
+}
+
+.intro-flower-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12em;
+  transform: translateY(0.02em);
+}
+
+.intro-flower {
+  width: 1.24em;
+  height: 1.24em;
+  object-fit: contain;
+  display: block;
+}
+
+.intro-flower-yellow {
+  transform: rotate(-8deg);
+}
+
+.intro-flower-pink {
+  transform: rotate(6deg);
+}
+
+.intro-flower-blue {
+  transform: rotate(-4deg);
+}
+
 .annotation-star {
   color: var(--muted);
   font-size: 0.7em;
@@ -167,28 +200,11 @@ section { scroll-margin-top: 24px; }
   opacity: 0.45;
 }
 
-.crayon-flower {
-  width: 1.18rem;
-  height: 1.18rem;
-  overflow: visible;
-}
-
-.crayon-flower path,
-.crayon-flower circle {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.15;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.crayon-flower circle {
-  fill: currentColor;
-  stroke-width: 0.5;
-}
-
-.crayon-flower-ghost {
-  opacity: 0.35;
+.note-separator-flower {
+  display: block;
+  width: 1.32rem;
+  height: 1.32rem;
+  object-fit: contain;
 }
 
 .note-header {
