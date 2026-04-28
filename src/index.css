@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Goudy Initialen";
-  src: url("./assets/fonts/GoudyInitialen.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 :root {
   font-family: "IM Fell English", Georgia, "Times New Roman", serif;
   color: #050505;
@@ -84,27 +76,8 @@ h1 {
   max-width: 49rem;
 }
 
-.drop-cap-copy::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .illuminated-title {
   display: block;
-  padding-top: 0.06em;
-}
-
-.illuminated-letter {
-  float: left;
-  display: block;
-  width: 4.52rem;
-  height: 4.62rem;
-  margin: 0.03em 0.3rem 0 0;
-  color: #003b2f;
-  font-family: "Goudy Initialen", "IM Fell English", Georgia, serif;
-  font-size: 5.55rem;
-  line-height: 0.78;
 }
 
 h2 {
@@ -174,8 +147,8 @@ p {
 
 .beliefs-block li {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.34em;
+  grid-template-columns: 1.45rem 1fr;
+  column-gap: 0.82rem;
   align-items: start;
   color: #050505;
   font-size: 1.12rem;
@@ -184,12 +157,17 @@ p {
 
 .beliefs-block li::before {
   content: "*";
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45rem;
+  height: 1.523rem;
   color: #050505;
+  font-family: "IM Fell English", Georgia, "Times New Roman", serif;
+  font-size: 1.48em;
   font-weight: 400;
   line-height: 1;
   text-align: center;
-  margin-top: 0.24em;
 }
 
 @media (max-height: 690px) {
@@ -215,13 +193,6 @@ p {
     line-height: 1.28;
   }
 
-  .illuminated-letter {
-    width: 3.98rem;
-    height: 3.95rem;
-    margin-right: 0.28rem;
-    font-size: 4.9rem;
-  }
-
   .beliefs-block li {
     font-size: 1rem;
     line-height: 1.28;
@@ -240,13 +211,6 @@ p {
 
   h1 {
     font-size: 1rem;
-  }
-
-  .illuminated-letter {
-    width: 3.76rem;
-    height: 3.82rem;
-    margin-right: 0.26rem;
-    font-size: 4.65rem;
   }
 
   p {

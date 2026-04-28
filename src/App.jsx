@@ -32,9 +32,8 @@ export default function App() {
       <div className="one-page-inner">
         <section className="intro-block" aria-labelledby="intro-title">
           <div className="drop-cap-copy">
-            <span className="illuminated-letter" aria-hidden="true">H</span>
-            <h1 id="intro-title" className="illuminated-title" aria-label="Hi, I'm Sukeerthi">
-              i, I'm Sukeerthi
+            <h1 id="intro-title" className="illuminated-title">
+              Hi, I'm Sukeerthi
             </h1>
             <p className="drop-cap-wrap">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
