@@ -1,405 +1,260 @@
 @import "tailwindcss";
 
-:root {
-  --bg:    #ffffff;
-  --text:  #111111;
-  --muted: #555555;
-  --line:  #d8d8d8;
-  --link:  #111111;
-  --hl:    #eeeeee;
-  --font-serif: "IM Fell English", Georgia, "Times New Roman", serif;
-  --font-sans: Arial, Helvetica, system-ui, sans-serif;
-  --serif-font-size: clamp(17px, 1.48vw, 23px);
-  --sans-font-size: clamp(16px, 1.4vw, 22px);
-  --site-font: var(--font-serif);
-  --site-font-size: var(--serif-font-size);
+@font-face {
+  font-family: "Goudy Initialen";
+  src: url("./assets/fonts/GoudyInitialen.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
-  font-family: var(--site-font);
-  font-size: var(--site-font-size);
-  line-height: 1.7;
-  color: var(--text);
-  background: var(--bg);
+:root {
+  font-family: "IM Fell English", Georgia, "Times New Roman", serif;
+  color: #050505;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html,
 body,
 #root {
+  width: 100%;
+  height: 100%;
   min-height: 100%;
+  margin: 0;
+  overflow: hidden;
   background: #ffffff;
-  background-color: #ffffff;
-}
-
-html.light,
-html.light body,
-html.light #root {
-  background: #ffffff;
-  background-color: #ffffff;
 }
 
 body {
-  margin: 0;
+  color: #050505;
 }
 
-.site-shell,
-.main-content,
-section,
-article {
-  background: #ffffff;
-  background-color: #ffffff;
+::selection {
+  color: #ffffff;
+  background: #050505;
 }
 
-html.dark .site-shell,
-html.dark .main-content,
-html.dark section,
-html.dark article {
-  background: #000000;
-  background-color: #000000;
-}
-
-.font-serif-mode {
-  --site-font: var(--font-serif);
-  --site-font-size: var(--serif-font-size);
-}
-
-.font-sans-mode {
-  --site-font: var(--font-sans);
-  --site-font-size: var(--sans-font-size);
-}
-
-.dark {
-  --bg:    #000000;
-  --text:  #ffffff;
-  --muted: #ffffff;
-  --line:  #ffffff;
-  --link:  #ffffff;
-  --hl:    #ffffff;
-}
-
-html.dark,
-html.dark body,
-html.dark #root {
-  background: #000000;
-  background-color: #000000;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --bg:    #000000;
-    --text:  #ffffff;
-    --muted: #ffffff;
-    --line:  #ffffff;
-    --link:  #ffffff;
-    --hl:    #ffffff;
-  }
-}
-
-::selection { background: var(--hl); }
-
-a { color: var(--link); text-underline-offset: 0.15em; }
-
-section { scroll-margin-top: 24px; }
-
-.intro-line {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.44em;
-}
-
-.intro-flower-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.12em;
-  transform: translateY(0.02em);
-}
-
-.intro-flower {
-  width: 1.24em;
-  height: 1.24em;
-  object-fit: contain;
-  display: block;
-}
-
-.intro-flower-yellow {
-  transform: rotate(-8deg);
-}
-
-.intro-flower-pink {
-  transform: rotate(6deg);
-}
-
-.intro-flower-blue {
-  transform: rotate(-4deg);
-}
-
-.annotation-star {
-  color: var(--muted);
-  font-size: 0.7em;
-  font-style: normal;
-  line-height: 1;
-  margin-left: 0.14em;
-  vertical-align: super;
-}
-
-.section-heading {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 1px;
-}
-
-.notes-section {
-  font-size: 1.08rem;
-  line-height: 1.62;
-}
-
-.notes-intro {
-  color: var(--muted);
-  margin-bottom: 30px;
-}
-
-.notes-intro-star {
-  color: inherit;
-}
-
-.notes-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.note-separator-preview {
-  max-width: 12rem;
-  margin-top: 18px;
-}
-
-.note-post {
-  padding: 0;
-}
-
-.note-post + .note-post {
-  margin-top: 0;
-}
-
-.note-separator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.48em;
-  margin: 1.7rem 0 2rem;
-  color: var(--text);
-  opacity: 0.92;
-}
-
-.note-separator-line {
-  display: block;
-  width: 2.4rem;
-  border-top: 1px solid currentColor;
-  opacity: 0.45;
-}
-
-.note-separator-flower {
-  display: block;
-  width: 1.32rem;
-  height: 1.32rem;
-  object-fit: contain;
-}
-
-.note-header {
-  margin-bottom: 10px;
-}
-
-.note-header h3 {
-  display: inline;
-  color: var(--text);
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.note-image-link {
-  display: block;
+.one-page {
   width: 100%;
-  margin: 16px 0 18px;
-}
-
-.note-image {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.note-subimages {
+  height: 100svh;
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  width: 100%;
-  margin-bottom: 18px;
+  place-items: center;
+  overflow: hidden;
+  padding: 28px;
+  color: #050505;
+  background: #ffffff;
 }
 
-.note-subimages .note-image-link {
-  width: 100%;
+.one-page-inner {
+  width: min(680px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(13px, 2.2vh, 22px);
+}
+
+.intro-block,
+.beliefs-block {
   margin: 0;
 }
 
-.note-subimages .note-image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  height: 100%;
-  object-fit: cover;
+h1,
+h2,
+p,
+ul {
+  margin: 0;
 }
 
-.md-output p {
-  margin-bottom: 1rem;
+h1 {
+  font-size: 1.12rem;
+  line-height: 1.36;
+  font-weight: 400;
 }
 
-.md-output p:last-child {
-  margin-bottom: 0;
+.drop-cap-copy {
+  max-width: 49rem;
 }
 
-.md-output strong {
-  font-weight: 600;
-}
-
-.md-output code {
-  font-size: 95%;
-}
-
-.md-output ul {
-  list-style: disc;
-  padding-left: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.md-output li {
-  margin-bottom: 0.25rem;
-}
-
-.md-output blockquote {
-  border-left: 2px solid var(--line);
-  margin: 1rem 0;
-  padding-left: 1rem;
-  color: var(--muted);
-}
-
-@keyframes peak-spin {
-  to { transform: rotate(360deg); }
-}
-
-/* --- Sidebar --- */
-.sidebar {
-  width: 200px;
-  flex-shrink: 0;
-  padding: 110px 36px 72px 80px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.sidebar-controls {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 12px;
-}
-
-.sidebar-icon-button {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  padding: 0;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.sidebar-icon-button:hover {
-  color: var(--text);
-}
-
-.font-toggle-icon {
+.drop-cap-copy::after {
+  content: "";
   display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1;
+  clear: both;
 }
 
-.font-toggle-icon.serif {
-  font-family: var(--font-serif);
+.illuminated-title {
+  display: block;
+  padding-top: 0.06em;
 }
 
-.font-toggle-icon.sans {
-  font-family: var(--font-sans);
+.illuminated-letter {
+  float: left;
+  display: block;
+  width: 4.52rem;
+  height: 4.62rem;
+  margin: 0.03em 0.3rem 0 0;
+  color: #003b2f;
+  font-family: "Goudy Initialen", "IM Fell English", Georgia, serif;
+  font-size: 5.55rem;
+  line-height: 0.78;
 }
 
-/* --- Hamburger (hidden on desktop) --- */
-.mob-btn {
-  display: none;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 400;
-  width: 36px;
-  height: 36px;
+h2 {
+  font-size: 1.12rem;
+  line-height: 1.36;
+  font-weight: 400;
+}
+
+p {
+  max-width: 49rem;
+  margin-top: 0.2rem;
+  color: #050505;
+  font-size: 1.12rem;
+  line-height: 1.36;
+}
+
+.drop-cap-wrap {
+  margin-top: 0.16rem;
+}
+
+.contact-line {
+  max-width: none;
+  margin-top: 0.28rem;
+}
+
+.flower-divider {
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  cursor: pointer;
-  font-size: 1.1rem;
-  color: var(--muted);
+  gap: clamp(5px, 1.1vh, 10px);
+  width: 100%;
 }
 
-/* --- Mobile --- */
-@media (max-width: 768px) {
-  .mob-btn {
-    display: flex;
+.flower-divider img {
+  display: block;
+  width: clamp(19px, 3.5vh, 30px);
+  height: clamp(19px, 3.5vh, 30px);
+  object-fit: contain;
+}
+
+.flower-divider img:nth-child(1) {
+  transform: rotate(-7deg);
+}
+
+.flower-divider img:nth-child(2) {
+  transform: rotate(4deg);
+}
+
+.flower-divider img:nth-child(3) {
+  transform: rotate(-3deg);
+}
+
+.beliefs-block ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: clamp(4px, 0.75vh, 8px);
+}
+
+.beliefs-block h2 + ul {
+  margin-top: clamp(8px, 1.2vh, 12px);
+}
+
+.beliefs-block ul + .contact-line {
+  margin-top: clamp(8px, 1.2vh, 12px);
+}
+
+.beliefs-block li {
+  display: grid;
+  grid-template-columns: 0.72em 1fr;
+  gap: 0.28em;
+  align-items: baseline;
+  color: #050505;
+  font-size: 1.12rem;
+  line-height: 1.36;
+}
+
+.beliefs-block li::before {
+  content: "*";
+  display: block;
+  width: 0.72em;
+  color: #050505;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  transform: translateY(0.09em);
+}
+
+@media (max-height: 690px) {
+  .one-page {
+    padding: 20px;
   }
 
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 220px;
-    height: 100vh;
-    padding: 72px 32px 40px 32px;
-    background: var(--bg);
-    border-right: 1px solid var(--line);
-    transform: translateX(-100%);
-    transition: transform 0.25s ease;
-    z-index: 300;
+  .one-page-inner {
+    gap: 10px;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
+  h1 {
+    font-size: 1rem;
   }
 
-  .main-content {
-    padding: 48px 24px 100vh 24px !important;
+  h2 {
+    font-size: 1rem;
   }
 
-  .profile-photo {
-    width: 160px !important;
+  p {
+    margin-top: 0.45rem;
+    font-size: 1rem;
+    line-height: 1.28;
   }
 
-  .note-subimages {
-    grid-template-columns: 1fr;
+  .illuminated-letter {
+    width: 3.98rem;
+    height: 3.95rem;
+    margin-right: 0.28rem;
+    font-size: 4.9rem;
   }
 
-  .note-subimages .note-image {
-    aspect-ratio: auto;
-    height: auto;
-    object-fit: contain;
+  .beliefs-block li {
+    font-size: 1rem;
+    line-height: 1.28;
   }
 
+  .flower-divider img {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 560px) {
+  .one-page {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .illuminated-letter {
+    width: 3.76rem;
+    height: 3.82rem;
+    margin-right: 0.26rem;
+    font-size: 4.65rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .beliefs-block li {
+    font-size: 1rem;
+  }
 }

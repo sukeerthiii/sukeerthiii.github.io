@@ -1,26 +1,63 @@
 import './index.css'
-import { PeakProvider } from './components/Peak'
-import Sidebar from './components/Sidebar'
-import Home from './sections/Home'
-import Beliefs from './sections/Beliefs'
-import Notes from './sections/Notes'
-import ThenAndNow from './sections/ThenAndNow'
+import flowerBlue from './assets/flowers/flower-blue.png'
+import flowerPink from './assets/flowers/flower-pink.png'
+import flowerYellow from './assets/flowers/flower-yellow.png'
+import flowerRed from './assets/flowers/flower-red.png'
+import flowerTeal from './assets/flowers/flower-teal.png'
+import flowerOrange from './assets/flowers/flower-orange.png'
+
+const BELIEFS = [
+  'Every cycle counts and very little matters.',
+  'Everything is made up and there are no prerequisites.',
+  'Tools are meant to be mastered, not worshipped.',
+  'Learning comes from doing, not reading, watching, listening or thinking.',
+  'Simple rules result in complex, intelligent behavior. Complex rules result in simple, stupid behavior.',
+  'You can do more than you think. The laws of physics are the only limit.',
+  'In the end, people are everything.',
+]
+
+function FlowerDivider({ flowers }) {
+  return (
+    <div className="flower-divider" aria-hidden="true">
+      {flowers.map((flower, index) => (
+        <img key={`${flower}-${index}`} src={flower} alt="" />
+      ))}
+    </div>
+  )
+}
 
 export default function App() {
   return (
-    <PeakProvider>
-      <div className="site-shell max-w-[1100px] mx-auto flex min-h-screen">
-        <Sidebar />
-        <main className="main-content" style={{ flex: 1, minWidth: 0, padding: '72px 60px 100vh 40px', maxWidth: 820 }}>
-          <Home />
-          <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '48px 0' }} />
-          <Beliefs />
-          <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '48px 0' }} />
-          <ThenAndNow />
-          <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '48px 0' }} />
-          <Notes />
-        </main>
+    <main className="one-page">
+      <div className="one-page-inner">
+        <section className="intro-block" aria-labelledby="intro-title">
+          <div className="drop-cap-copy">
+            <span className="illuminated-letter" aria-hidden="true">H</span>
+            <h1 id="intro-title" className="illuminated-title" aria-label="Hi, I'm Sukeerthi">
+              i, I'm Sukeerthi
+            </h1>
+            <p className="drop-cap-wrap">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+            </p>
+          </div>
+        </section>
+
+        <FlowerDivider flowers={[flowerBlue, flowerPink, flowerYellow]} />
+
+        <section className="beliefs-block" aria-labelledby="beliefs-title">
+          <h2 id="beliefs-title">Some things I believe in</h2>
+          <ul>
+            {BELIEFS.map((belief) => (
+              <li key={belief}>{belief}</li>
+            ))}
+          </ul>
+          <p className="contact-line">
+            You can email me at a [dot] sukeerthi [at] gmail.
+          </p>
+        </section>
+
+        <FlowerDivider flowers={[flowerRed, flowerTeal, flowerOrange]} />
       </div>
-    </PeakProvider>
+    </main>
   )
 }
